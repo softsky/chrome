@@ -8,9 +8,14 @@ COPY copyables /
 
 ADD https://dl.google.com/linux/linux_signing_key.pub /tmp/
 
-RUN apt-key add /tmp/linux_signing_key.pub \
+RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
+    && nvm install node 5.0 \
+    && nvm use node 5.0 \
+    apt-key add /tmp/linux_signing_key.pub \
 	&& apt-get update \
 	&& apt-get install -y \
+	g++ \
+	make \
 	google-chrome-stable \
 	chrome-remote-desktop \
 	fonts-takao \
