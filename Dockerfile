@@ -2,7 +2,7 @@ FROM siomiz/chrome
 
 MAINTAINER Arsen A. Gutsal <gutsal.arsen@softsky.com.ua>
 
-ENV CHROME_REMOTE_DESKTOP_DEFAULT_DESKTOP_SIZES 1024x768
+#ENV CHROME_REMOTE_DESKTOP_DEFAULT_DESKTOP_SIZES 1024x768
 
 RUN apt-get update
 RUN apt-get install -y \
